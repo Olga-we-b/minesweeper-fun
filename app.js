@@ -1,12 +1,16 @@
 document.addEventListener('DOMContentLoaded', ()=>{
+    // document.oncontextmenu = e => e.preventDefault();
     const grid = document.querySelector('.grid');
     let width = 10;
     let squares = [];
     let bombsAmount = 20;
+    let flags = 0;
     let isGameOver = false;
+
 
     // create board
     function createBoard() {
+
         // shuffle the areas
         const bombsArray = Array(bombsAmount).fill('bomb');
         const emptyArray = Array(width*width-bombsAmount).fill('valid');
@@ -24,9 +28,33 @@ document.addEventListener('DOMContentLoaded', ()=>{
             square.addEventListener('click', (e) =>{
                 click(square)
             })
+
+            // cntrl + left click
+            square.oncontextmenu = function(e) {
+                e.preventDefault();
+                addFlag(square)
+            }
+
         }
     }
     createBoard();
+
+    //add flag
+    function addFlag(square){
+        if (isGameOver) return;
+        if (!square.classList.contains('checked') && (flags < bombsAmount)){
+            if (!square.classList.contains('flag')){
+                square.classList.add('flag');
+                square.innerText = '🚩';
+                flags++;
+            } else {
+                square.classList.remove('flag');
+                square.innerText = '';
+                flags--;
+            }
+
+        }
+    }
 
 
     // add numbers 
