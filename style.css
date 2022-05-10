@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+.grid{
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: gray;
+}
+.grid div{
+    height: 40px;
+    width: 40px;
+    border: 1px solid black;
+
+}
+.bomb {
+    background-color: orange;
+}
