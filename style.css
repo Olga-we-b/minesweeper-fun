@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Ubuntu Mono', monospace;
 }
 body{
     display: flex;
@@ -16,20 +19,22 @@ body{
     height: 400px;
     display: flex;
     flex-wrap: wrap;
-    background-color: gray;
+    background-color: rgb(156, 155, 155);
 }
 .grid div{
     height: 40px;
     width: 40px;
-    border: 1px solid black;
+    border: 1px solid rgb(100, 100, 100);
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: bold;
 
 }
 
+
 .checked {
-    background-color: green;
+    background-color: rgb(90,90,90);
 }
 .result{
     padding: 3vh;
@@ -37,4 +42,7 @@ body{
 }
 .flags-left{
     padding-bottom: 3vh;
+}
+.pink{
+    color: rgb(245, 130, 149);
 }
