@@ -5,6 +5,7 @@
 }
 body{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100vw;
@@ -26,9 +27,14 @@ body{
     align-items: center;
 
 }
-.bomb {
-    background-color: orange;
-}
+
 .checked {
     background-color: green;
+}
+.result{
+    padding: 3vh;
+    font-size: 2em;
+}
+.flags-left{
+    padding-bottom: 3vh;
 }
